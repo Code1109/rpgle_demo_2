@@ -1,6 +1,6 @@
 
-bin_lib=cmpsys
-liblist=$(bin_lib) sample
+bin_lib=pblades1
+liblist=$(bin_lib) 
 shell=/QOpenSys/usr/bin/qsh
 
 all:	justhola.sqlrpgle
