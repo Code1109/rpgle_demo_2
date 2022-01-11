@@ -1,11 +1,11 @@
 
-bin_lib=pblades1
-liblist=$(bin_lib) 
-shell=/QOpenSys/usr/bin/qsh
+BIN_LIB=PBLADES1
+LIBLIST=$(BIN_LIB) 
+SHELL=/QOpenSys/usr/bin/qsh
 
-all:	justhola.sqlrpgle
+all: justhola.sqlrpgle
 
 %.sqlrpgle:
 	system -s "CHGATR OBJ('./qrpglesrc/$*.sqlrpgle') ATR(*CCSID) VALUE(1252)"
-	liblist -a $(liblist);\
-	system "CRTSQLRPGI OBJ($(bin_lib)/$*) SRCSTMF('./qrpglesrc/$*.sqlrpgle') COMMIT(*none) DBGVIEW(*source) OPTION(*eventf)" 
+	liblist -a $(LIBLIST);\
+	system "CRTSQLRPGI OBJ($(BIN_LIB)/$*) SRCSTMF('./qrpglesrc/$*.sqlrpgle') COMMIT(*NONE) DBGVIEW(*SOURCE) OPTION(*EVENTF)" 
